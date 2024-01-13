@@ -2,18 +2,18 @@
     {
         "title": "Sugar Free Candy",
         "description": "Founded by 4 dentists, our startup manufactures candies made from octopus and tofu.",
-        "background": "/assets/hero-bg.jpg"
+        "background": "assets/hero-bg.jpg"
     },
 
     {
         "title": "The 6th Wave",
         "description": "loreum ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.",
-        "background": "/assets/hero-other-bg.jpg"
+        "background": "assets/hero-other-bg.jpg"
     },
 
     {
         "title": "Flower Beetles",
-        "description": "La startup qui transforme vos vieilles voitures en pot de fleurs",
-        "background": "/assets/hero-car.jpg"
+        "description": "La startup qui transforme vos vieilles voitures en pots de fleurs",
+        "background": "assets/hero-car.jpg"
     }
 ]

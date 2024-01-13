@@ -1,7 +1,7 @@
 /*  Composant Hero */
 
 /* on importe les fonctions loadTemplate et loadJSON depuis le module /js/loader.js */
-import { loadTemplate, loadJSON } from '/js/loader.js';
+import { loadTemplate, loadJSON } from '../../js/loader.js';
 
 /*  
     Remarque : si Hero était un composant qui en utilisait un autre, il serait tout à fait possible
@@ -9,7 +9,7 @@ import { loadTemplate, loadJSON } from '/js/loader.js';
 */
 
 /* on charge le template du composant Hero */
-let template = await loadTemplate('./component/hero/template.html');
+let template = await loadTemplate('./component/Hero/template.html');
 
 /* on crée un objet Hero vide qui va symboliser notre composant */
 let Hero = {}; 

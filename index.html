@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemple d'utilisation des modules pour coder un composant</title>
+    <link rel="stylesheet" href="./css/base.css" />
+  </head>
+  <body>
+
+    <section id="sec1">
+
+    </section>
+
+    <!-- 
+        Dans un document HTML on peut inclure autant de script JS que l'on souhaite.
+        Mais il n'est en revanche pas possible d'inclure un script JS dans un autre script JS.
+        Et ça c'est dommage car cela nous empêche de découper notre code en plusieurs fichiers.
+        Le risque c'est de finir avec des scripts JS très longs où l'on passera trop de temps à 
+        chercher les morceaux de code qui nous intéressent, nos erreurs, etc... au risque de s'y
+        perdre totalement.
+
+        Heureusement, il existe une solution : les modules JS.
+        Un module JS est un script JS dont le contenu est "protégé". Un module JS ne peut pas
+        voir le contenu d'un autre module JS. C'est comme si chaque module JS était dans sa propre
+        bulle. Mais il est possible d'exporter des éléments (variables, objets, fonctions...) d'un 
+        module JS pour les rendre importables/utilisables dans un autre module JS. C'est ce que l'on va faire.
+
+        Le principe sera de définir un module JS pour chaque composant. Et pour composer la page web,
+        on importera les modules JS des composants dont on a besoin pour les formater avec les données
+        en JSON et les placer dans la page où l'on souhaite.
+    -->
+    <script type="module">
+        /* 
+            Dans ./component/hero/script.js", le composant Hero est défini et exporté.
+            C'est parce qu'il est exporté que l'on peut l'importer ici ou dans n'importe 
+            quel autre script type "module".
+        */
+        import { Hero } from "./component/Hero/script.js";
+
+        /* 
+            On appelle la méthode render du composant Hero en passant en paramètre :
+            . le sélecteur CSS de l'élément HTML où l'on souhaite afficher le composant (ici l'élément d'identifiant "sec1")
+            . le chemin du fichier json qui contient les données à utiliser pour formater le template du composant
+        */
+        Hero.render("#sec1", "./data/hero.json");
+
+        /* 
+            Note sur le format JSON :
+            Le format JSON est un format de données qui permet de stocker des données sous forme de texte.
+            Il est très utilisé pour échanger des données entre un serveur et un client (navigateur web).
+            Il est aussi très utilisé pour stocker des données dans des fichiers. C'est ce que l'on fait ici.
+            Le format JSON est très proche du format JS. Les tableaux [] et les objets {} sont écrits de la même manière.
+            La seule différence c'est que les propriétés d'un objet en JSON doivent être entre guillemets doubles.
+            Ouvrez le fichier ./data/hero.json pour voir un example.
+        */
+    </script>
+    
+  </body>
+</html>

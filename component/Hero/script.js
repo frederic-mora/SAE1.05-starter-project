@@ -22,7 +22,7 @@ Hero.format =  function(obj) {
     let html = template;
     html = html.replace('{{title}}', obj.title);
     html = html.replace('{{description}}', obj.description);
-    html = html.replace('{{background}}', obj.background);
+    html = html.replaceAll('{{background}}', obj.background);
     return html;
 }
 
